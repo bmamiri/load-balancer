@@ -44,9 +44,8 @@ Now go to the browser and open the client microservice rest endpoint http://loca
 To understand this backend server is returning its running port, and we are displaying that in client microservice response as well. Try refreshing this URL couple of times and notice that the port of the backend server keeps changing, which means client-side load balancing is working. Now try to add more instances of the backend server and check that is also registered in the eureka server and eventually considered in ribbon, as once that will be registered in eureka and ribbon automatically ribbon will send the request to the new instances as well. <br>
 
 **Test with hard code backends without service discovery** <br>
-Go the frontend microservice application.properties file and enable this. <br>
+Go the frontend microservice `application.properties` file and enable this. <br>
 
-_application.properties_ <br>
 `server.ribbon.listOfServers=localhost:9090,localhost:9091` <br>
 `server.ribbon.eureka.enabled=false` <br>
 
